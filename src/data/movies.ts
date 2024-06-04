@@ -12,14 +12,14 @@ export const movies: MoviesType[] = [
     title: "Back to the Future 1",
     category: "Sci-Fi",
     price: 15,
-    imageUrl: "assets/images/btf1.jpg",
+    imageUrl: "assets/images/btf1.jpeg",
   },
   {
     id: 2,
     title: "Back to the Future 2",
     category: "Sci-Fi",
     price: 15,
-    imageUrl: "assets/images/btf2.webp",
+    imageUrl: "assets/images/btf2.jpeg",
   },
   {
     id: 3,

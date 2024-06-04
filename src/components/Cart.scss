@@ -3,23 +3,32 @@
   flex-direction: column;
   justify-content: top;
   align-items: center;
-  height: 50vh;
-  width: 70vw;
+  width: 100%;
   border: 2px solid rgb(212, 143, 212);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   margin: 0 auto;
   ul {
+    width: 80%;
     list-style: none;
     li {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
+      align-items: center;
       text-align: center;
+
+      .custom-image {
+        height: 50px;
+        padding: 6px;
+        max-height: 55px;
+        object-fit: contain;
+      }
     }
     button {
-      margin-top: 14px;
+      margin-top: 8px;
+      width: 30%;
+      height: 40px;
     }
   }
 }
