@@ -5,13 +5,13 @@ import React, {
   ReactNode,
   useEffect,
 } from "react";
-import { Movie } from "../data/movies";
+import { MoviesType } from "../data/movies";
 
 type CartContextType = {
-  cart: Movie[];
+  cart: MoviesType[];
   total: number;
-  addToCart: (movie: Movie) => void;
-  removeFromCart: (movie: Movie) => void;
+  addToCart: (movie: MoviesType) => void;
+  removeFromCart: (movie: MoviesType) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -19,19 +19,19 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<Movie[]>([]);
+  const [cart, setCart] = useState<MoviesType[]>([]);
   const [total, setTotal] = useState<number>(0);
 
-  const addToCart = (movie: Movie) => {
+  const addToCart = (movie: MoviesType) => {
     setCart((prevCart) => [...prevCart, movie]);
   };
 
-  const removeFromCart = (movie: Movie) => {
+  const removeFromCart = (movie: MoviesType) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== movie.id));
   };
 
   useEffect(() => {
-    const calculateTotal = (cart: Movie[]): number => {
+    const calculateTotal = (cart: MoviesType[]): number => {
       let total = 0;
       const backToTheFutureMovies = cart.filter((movie) =>
         movie.title.startsWith("Back to the Future")
