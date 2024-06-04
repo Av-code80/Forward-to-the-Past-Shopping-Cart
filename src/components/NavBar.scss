@@ -1,20 +1,21 @@
 header {
- width: 100%;
+  width: 100%;
   height: 70px;
   background-color: white;
   top: 0px;
 }
 nav {
   display: flex;
-    justify-content:center;
+  justify-content: center;
   background-color: rgb(59, 59, 240);
   padding: 1rem;
   ul {
-    margin:0 auto;
-  width:80%;
-  display:flex;
-  justify-content:space-between;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
     li {
+      list-style-type: none;
       a {
         color: white;
         text-decoration: none;

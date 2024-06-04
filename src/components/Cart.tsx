@@ -12,7 +12,12 @@ const Cart: React.FC = () => {
         <p>Your cart is empty</p>
       ) : (
         <ul>
-       
+          {cart.map((movie, ) => (
+            <li key={movie.id}>
+              {movie.title} - {movie.price}€{" "}
+              <button onClick={() => removeFromCart(movie)}>Remove</button>
+            </li>
+          ))}
         </ul>
       )}
       <h3>Total: {total}€</h3>
