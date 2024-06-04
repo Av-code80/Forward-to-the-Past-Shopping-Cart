@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import "./Cart.scss";
 import Image from "./image/Image";
 
 const Cart: React.FC = () => {
   const { cart, total, removeFromCart } = useCart();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cart.length === 0) {
+      const timer = setTimeout(() => {
+        navigate("/");
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [cart, navigate]);
 
   return (
     <div className="cart">
@@ -15,10 +26,7 @@ const Cart: React.FC = () => {
         <ul>
           {cart.map((movie) => (
             <li key={movie.id} className="cart-elements">
-              <Image
-                src={movie.imageUrl}
-                alt={movie.title}
-              />
+              <Image src={movie.imageUrl} alt={movie.title} />
               {movie.title} - {movie.price}€
               <button onClick={() => removeFromCart(movie)}>Remove</button>
             </li>

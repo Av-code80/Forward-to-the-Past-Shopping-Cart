@@ -10,7 +10,7 @@
   width: 30%;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-image: linear-gradient(to bottom right, #ff61d2, #fe9090);
+  background-image: linear-gradient(to bottom right, #ec9198, #b6dbe7f2);
 
   &:hover {
     transform: translateY(-10px);
@@ -37,7 +37,7 @@
     }
 
     .add-to-cart {
-      background-image: linear-gradient(to right, #ff61d2, #fe9090);
+  background-image: linear-gradient(to bottom right, #d143ea, #dda044f2);
       color: white;
       border: none;
       padding: 0.5rem 1rem;
@@ -50,7 +50,7 @@
       transition: background-image 0.3s ease;
 
       &:hover {
-        background-image: linear-gradient(to right, #fe9090, #ff61d2);
+  background-image: linear-gradient(to bottom right, #ed6887, #e4c94ff2);
       }
     }
   }

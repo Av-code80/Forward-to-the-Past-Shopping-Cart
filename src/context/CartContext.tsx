@@ -12,6 +12,7 @@ type CartContextType = {
   total: number;
   addToCart: (movie: MoviesType) => void;
   removeFromCart: (movie: MoviesType) => void;
+  clearCart: () => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -28,6 +29,10 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   const removeFromCart = (movie: MoviesType) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== movie.id));
+  };
+
+  const clearCart = () => {
+    setCart([]);
   };
 
   useEffect(() => {
@@ -59,7 +64,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, total, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cart, total, addToCart, removeFromCart, clearCart }}
+    >
       {children}
     </CartContext.Provider>
   );
