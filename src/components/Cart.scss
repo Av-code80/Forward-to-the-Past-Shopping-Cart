@@ -1,0 +1,26 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 50vh;
+  width: 70vw;
+  border: 2px solid rgb(212, 143, 212);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+  ul {
+    list-style: none;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      text-align: center;
+    }
+    button {
+      margin-top: 14px;
+    }
+  }
+}
