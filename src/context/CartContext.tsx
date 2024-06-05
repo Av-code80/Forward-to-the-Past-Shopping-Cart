@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import { MoviesType } from "../data/movies";
 import { toast } from "react-toastify";
-import { CartContextType, CartItem } from "../commun/types/types";
-import useCartTotal from "../commun/hooks/useCartTotal";
-import { useLocalStorage } from "../commun/hooks/useLocalStorage";
+import { CartContextType, CartItem } from "../common/types/types";
+import useCartTotal from "../common/hooks/useCartTotal";
+import { useLocalStorage } from "../common/hooks/useLocalStorage";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 

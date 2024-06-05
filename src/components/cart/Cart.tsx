@@ -2,7 +2,7 @@ import { useCart } from "../../context/CartContext";
 import { IoTrashBinOutline } from "react-icons/io5";
 import "./Cart.scss";
 import Image from "../image/Image";
-import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigateOnEmptyPage";
+import { useNavigateOnEmptyPage } from "../../common/hooks/useNavigateOnEmptyPage";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCart();

@@ -60,3 +60,15 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .cart {
+    align-items: unset;
+    h3 {
+      text-align: center;
+    }
+  }   
+  
+  
+  }
+
