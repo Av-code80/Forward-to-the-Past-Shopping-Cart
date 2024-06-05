@@ -6,8 +6,8 @@ import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigate";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCart();
-
-  useNavigateOnEmptyPage(cart);
+  const delay: number = 1000;
+  useNavigateOnEmptyPage(cart, delay);
 
   return (
     <div className="cart">
