@@ -1,27 +1,27 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa"; // Importation de l'icône
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import "./NavBar.scss";
 import { useCart } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "../image/Image";
+import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigateOnEmptyPage";
 
 const NavBar: React.FC = () => {
   const { total, cart } = useCart();
-  const navigate = useNavigate();
+
+  const delay: number = 1000;
+  useNavigateOnEmptyPage(cart, delay);
 
   const handleCartClick = (event: React.MouseEvent) => {
     if (cart.length === 0) {
       event.preventDefault();
       toast.error(
-        "Your cart is empty. Add items to your cart before viewing it"
+        "Your cart is empty. Add movie to your cart before viewing it"
       );
-    } else {
-      navigate("/cart");
     }
   };
-
   return (
     <header>
       <nav className="navbar">
@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
             </Link>
           </li>
           <li className="li-hover">
-            <Link to="/">Movies</Link>
+            <Link to="/">MOVIES</Link>
           </li>
           <li>
             <Link onClick={handleCartClick} to="/cart">
