@@ -8,8 +8,9 @@ import React, {
 import { MoviesType } from "../data/movies";
 import { toast } from "react-toastify";
 
+// Définir le type pour les éléments du panier
 type CartItem = {
-  id: number;
+  uniqueId: number;
   movie: MoviesType;
 };
 
@@ -17,7 +18,7 @@ type CartContextType = {
   cart: CartItem[];
   total: number;
   addToCart: (movie: MoviesType) => void;
-  removeFromCart: (movie: MoviesType) => void;
+  removeFromCart: (uniqueId: number) => void;
   clearCart: () => void;
 };
 
@@ -31,16 +32,18 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   const addToCart = (movie: MoviesType) => {
     const newCartItem: CartItem = {
-      id: new Date().getTime(),
+      uniqueId: new Date().getTime(), // Utiliser l'horodatage comme identifiant unique
       movie,
     };
     setCart((prevCart) => [...prevCart, newCartItem]);
     toast.success("Movie added to cart");
   };
 
-  const removeFromCart = (movie: MoviesType) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== movie.id));
-    toast.success("Movie deleted");
+  const removeFromCart = (uniqueId: number) => {
+    setCart((prevCart) =>
+      prevCart.filter((item) => item.uniqueId !== uniqueId)
+    );
+    toast.success("Movie removed from cart");
   };
 
   const clearCart = () => {
@@ -50,11 +53,11 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     const calculateTotal = (cart: CartItem[]): number => {
       let total = 0;
-      const backToTheFutureMovies = cart.filter((movie) =>
-        movie.movie.title.startsWith("Back to the Future")
+      const backToTheFutureMovies = cart.filter((item) =>
+        item.movie.title.startsWith("Back to the Future")
       );
       const uniqueBTTFMovies = new Set(
-        backToTheFutureMovies.map((movie) => movie.movie.title)
+        backToTheFutureMovies.map((item) => item.movie.title)
       ).size;
 
       if (uniqueBTTFMovies === 3) {
@@ -66,8 +69,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
       }
 
       total += cart
-        .filter((movie) => !movie.movie.title.startsWith("Back to the Future"))
-        .reduce((sum, movie) => sum + movie.movie.price, 0);
+        .filter((item) => !item.movie.title.startsWith("Back to the Future"))
+        .reduce((sum, item) => sum + item.movie.price, 0);
 
       return total;
     };

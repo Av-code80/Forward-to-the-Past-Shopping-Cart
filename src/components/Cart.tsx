@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import Image from "./image/Image";
-import { IoTrashBinOutline } from "react-icons/io5";
-
+import { IoTrashBinOutline } from "react-icons/io5"; 
 import "./Cart.scss";
+import Image from "./image/Image";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCart();
@@ -25,18 +24,22 @@ const Cart = () => {
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
-        <ul>
+        <>
           <h3>Summary:</h3>
-          {cart.map((movie) => (
-            <li key={movie.id} className="cart-elements">
-              <Image src={movie.movie.imageUrl} alt={movie.movie.title} />
-              {movie.movie.title} - {movie.movie.price}€
-              <button onClick={() => removeFromCart(movie.movie)}>
-                <IoTrashBinOutline size={30} />
-              </button>
-            </li>
-          ))}
-        </ul>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.uniqueId}>
+                <Image src={item.movie.imageUrl} alt={item.movie.title} />
+                <div>
+                  <span>{item.movie.title}</span> - {item.movie.price}€
+                </div>
+                <button onClick={() => removeFromCart(item.uniqueId)}>
+                  <IoTrashBinOutline size={30} />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
       <h3>Total: {total}€</h3>
     </div>
