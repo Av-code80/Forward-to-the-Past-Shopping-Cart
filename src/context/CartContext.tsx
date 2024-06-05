@@ -3,13 +3,14 @@ import { MoviesType } from "../data/movies";
 import { toast } from "react-toastify";
 import { CartContextType, CartItem } from "../commun/types/types";
 import useCartTotal from "../commun/hooks/useCartTotal";
+import { useLocalStorage } from "../commun/hooks/useLocalStorage";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useLocalStorage<CartItem[]>("cart", []);
   const total = useCartTotal(cart);
 
   const addToCart = (movie: MoviesType) => {
