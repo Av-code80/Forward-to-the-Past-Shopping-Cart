@@ -67,3 +67,9 @@
     outline: 4px auto -webkit-focus-ring-color;
   }
 }
+
+@media (max-width: 480px) {
+  .movie-item {
+    width: 90%;
+  }
+}
