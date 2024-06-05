@@ -1,8 +1,7 @@
 import React from "react";
-import { movies } from "../data/movies";
-import MovieItem from "./MovieItem";
+import { movies } from "../../data/movies";
+import MovieItem from "../movieItem/MovieItem";
 import "./MovieList.scss";
-import '../index.scss'
 
 const MovieList: React.FC = () => {
   return (

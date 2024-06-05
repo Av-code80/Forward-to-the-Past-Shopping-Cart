@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "../../components/NavBar";
-import MovieList from "../../components/MovieList";
-import Cart from "../../components/Cart";
+import NavBar from "../../components/navbar/NavBar";
+import MovieList from "../../components/movieList/MovieList";
+import Cart from "../../components/cart/Cart";
 import { CartProvider } from "../../context/CartContext";
-  import { ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "./HomePage.scss";
 import "../../index.scss";
 import "react-toastify/dist/ReactToastify.css";
