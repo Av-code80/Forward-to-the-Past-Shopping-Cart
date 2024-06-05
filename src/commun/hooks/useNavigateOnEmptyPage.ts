@@ -3,7 +3,7 @@ import { CartItem} from "../types/types";
 import { useNavigate } from "react-router-dom";
 
 
-export const useNavigateOnEmptyPage = (cart: CartItem[], delay?: 1000) => {
+export const useNavigateOnEmptyPage = (cart: CartItem[], delay: number) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,5 +13,5 @@ export const useNavigateOnEmptyPage = (cart: CartItem[], delay?: 1000) => {
       }, delay);
       return () => clearTimeout(timer);
     }
-  }, [cart, navigate]);
+  }, [cart, navigate, delay]);
 };

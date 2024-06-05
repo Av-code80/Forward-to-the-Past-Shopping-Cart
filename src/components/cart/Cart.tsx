@@ -2,12 +2,12 @@ import { useCart } from "../../context/CartContext";
 import { IoTrashBinOutline } from "react-icons/io5";
 import "./Cart.scss";
 import Image from "../image/Image";
-import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigate";
+import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigateOnEmptyPage";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCart();
-
-  useNavigateOnEmptyPage(cart);
+  const delay: number = 1000;
+  useNavigateOnEmptyPage(cart, delay);
 
   return (
     <div className="cart">
