@@ -4,11 +4,17 @@
   justify-content: top;
   align-items: center;
   width: 100%;
-  border: 2px solid rgb(212, 143, 212);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   margin: 0 auto;
+  color: rgb(72, 68, 68);
+  h2 {
+    color: #b84960;
+  }
+  h3 {
+    text-align: left;
+  }
   ul {
     width: 80%;
     list-style: none;
@@ -19,16 +25,33 @@
       text-align: center;
 
       .custom-image {
-       height: 65px;
-    padding: 6px;
-    max-height: 70px;
-    object-fit: contain;
+        height: 65px;
+        padding: 6px;
+        max-height: 70px;
+        object-fit: contain;
       }
-    }
-    button {
-      margin-top: 8px;
-      width: 30%;
-      height: 40px;
+
+      button {
+        background: none;
+        border: none;
+        color: #e2163f;
+        font-size: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          color: #d56178;
+        }
+      }
+      span {
+        font-size: x-large;
+        cursor: pointer;
+        &:hover {
+          color: #b84960;
+        }
+      }
     }
   }
 }

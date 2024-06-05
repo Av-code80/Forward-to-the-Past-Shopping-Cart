@@ -20,8 +20,14 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       <Image src={movie.imageUrl} alt={movie.title} />
       <div className="movie-details">
         <h3>{movie.title}</h3>
-        <p>Genre: {movie.category}</p>
-        <p>Price: {movie.price}€</p>
+        <p>
+          <span>Genre: </span>
+          {movie.category}
+        </p>
+        <p>
+          <span>Price: </span>
+          {movie.price}€
+        </p>
         {isHovered && (
           <button onClick={() => addToCart(movie)} className="add-to-cart">
             Add to Cart

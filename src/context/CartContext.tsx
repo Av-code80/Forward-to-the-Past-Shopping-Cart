@@ -8,9 +8,13 @@ import React, {
 import { MoviesType } from "../data/movies";
 import { toast } from "react-toastify";
 
+type CartItem = {
+  id: number;
+  movie: MoviesType;
+};
 
 type CartContextType = {
-  cart: MoviesType[];
+  cart: CartItem[];
   total: number;
   addToCart: (movie: MoviesType) => void;
   removeFromCart: (movie: MoviesType) => void;
@@ -22,31 +26,35 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<MoviesType[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [total, setTotal] = useState<number>(0);
 
   const addToCart = (movie: MoviesType) => {
-    setCart((prevCart) => [...prevCart, movie]);
-    toast.success("Movie added to cart")
+    const newCartItem: CartItem = {
+      id: new Date().getTime(),
+      movie,
+    };
+    setCart((prevCart) => [...prevCart, newCartItem]);
+    toast.success("Movie added to cart");
   };
 
   const removeFromCart = (movie: MoviesType) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== movie.id));
-    toast.success("Movie removed")
+    toast.success("Movie deleted");
   };
-  
+
   const clearCart = () => {
     setCart([]);
   };
 
   useEffect(() => {
-    const calculateTotal = (cart: MoviesType[]): number => {
+    const calculateTotal = (cart: CartItem[]): number => {
       let total = 0;
       const backToTheFutureMovies = cart.filter((movie) =>
-        movie.title.startsWith("Back to the Future")
+        movie.movie.title.startsWith("Back to the Future")
       );
       const uniqueBTTFMovies = new Set(
-        backToTheFutureMovies.map((movie) => movie.title)
+        backToTheFutureMovies.map((movie) => movie.movie.title)
       ).size;
 
       if (uniqueBTTFMovies === 3) {
@@ -58,8 +66,8 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
       }
 
       total += cart
-        .filter((movie) => !movie.title.startsWith("Back to the Future"))
-        .reduce((sum, movie) => sum + movie.price, 0);
+        .filter((movie) => !movie.movie.title.startsWith("Back to the Future"))
+        .reduce((sum, movie) => sum + movie.movie.price, 0);
 
       return total;
     };
