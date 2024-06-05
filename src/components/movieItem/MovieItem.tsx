@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MoviesType } from "../data/movies";
-import { useCart } from "../context/CartContext";
-import Image from "./image/Image";
+import { MoviesType } from "../../data/movies";
+import { useCart } from "../../context/CartContext";
+import Image from "../image/Image";
 import "./MovieItem.scss";
 
 type MovieItemProps = {

@@ -1,22 +1,13 @@
-import { useEffect } from "react";
-import { useCart } from "../context/CartContext";
-import { useNavigate } from "react-router-dom";
-import { IoTrashBinOutline } from "react-icons/io5"; 
+import { useCart } from "../../context/CartContext";
+import { IoTrashBinOutline } from "react-icons/io5";
 import "./Cart.scss";
-import Image from "./image/Image";
+import Image from "../image/Image";
+import { useNavigateOnEmptyPage } from "../../commun/hooks/useNavigate";
 
 const Cart = () => {
   const { cart, total, removeFromCart } = useCart();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (cart.length === 0) {
-      const timer = setTimeout(() => {
-        navigate("/");
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [cart, navigate]);
+  useNavigateOnEmptyPage(cart);
 
   return (
     <div className="cart">

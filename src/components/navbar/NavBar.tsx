@@ -2,11 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa"; // Importation de l'icône
 import "./NavBar.scss";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../index.scss";
-import Image from "./image/Image";
+import Image from "../image/Image";
 
 const NavBar: React.FC = () => {
   const { total, cart } = useCart();

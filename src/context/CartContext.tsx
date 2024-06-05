@@ -7,20 +7,8 @@ import React, {
 } from "react";
 import { MoviesType } from "../data/movies";
 import { toast } from "react-toastify";
+import { CartContextType, CartItem } from "../commun/types/types";
 
-// Définir le type pour les éléments du panier
-type CartItem = {
-  uniqueId: number;
-  movie: MoviesType;
-};
-
-type CartContextType = {
-  cart: CartItem[];
-  total: number;
-  addToCart: (movie: MoviesType) => void;
-  removeFromCart: (uniqueId: number) => void;
-  clearCart: () => void;
-};
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -32,7 +20,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   const addToCart = (movie: MoviesType) => {
     const newCartItem: CartItem = {
-      uniqueId: new Date().getTime(), // Utiliser l'horodatage comme identifiant unique
+      uniqueId: new Date().getTime(), 
       movie,
     };
     setCart((prevCart) => [...prevCart, newCartItem]);
