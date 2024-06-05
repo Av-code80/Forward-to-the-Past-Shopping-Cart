@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { MoviesType } from "../data/movies";
 import { useCart } from "../context/CartContext";
-import "./MovieItem.scss";
 import Image from "./image/Image";
-
+import "./MovieItem.scss";
 
 type MovieItemProps = {
   movie: MoviesType;
 };
-
 const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
   const { addToCart } = useCart();
   const [isHovered, setIsHovered] = useState(false);

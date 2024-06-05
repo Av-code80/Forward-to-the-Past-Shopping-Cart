@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import "./Cart.scss";
 import Image from "./image/Image";
+import "./Cart.scss";
 
-const Cart: React.FC = () => {
+const Cart = () => {
   const { cart, total, removeFromCart } = useCart();
   const navigate = useNavigate();
 

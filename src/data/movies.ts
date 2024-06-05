@@ -93,4 +93,4 @@ export const movies: MoviesType[] = [
   },
 ];
 
-//export default new Promise<MoviesType>((resolve) => setTimeout(resolve, 100));
+

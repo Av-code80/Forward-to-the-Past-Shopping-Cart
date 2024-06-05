@@ -6,6 +6,8 @@ import React, {
   useEffect,
 } from "react";
 import { MoviesType } from "../data/movies";
+import { toast } from "react-toastify";
+
 
 type CartContextType = {
   cart: MoviesType[];
@@ -25,12 +27,14 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
 
   const addToCart = (movie: MoviesType) => {
     setCart((prevCart) => [...prevCart, movie]);
+    toast.success("Movie added to cart")
   };
 
   const removeFromCart = (movie: MoviesType) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== movie.id));
+    toast.success("Movie removed")
   };
-
+  
   const clearCart = () => {
     setCart([]);
   };

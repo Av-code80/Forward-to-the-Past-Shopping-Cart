@@ -2,6 +2,7 @@ import React from "react";
 import { movies } from "../data/movies";
 import MovieItem from "./MovieItem";
 import "./MovieList.scss";
+import '../index.scss'
 
 const MovieList: React.FC = () => {
   return (
