@@ -13,6 +13,10 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .movie-details {
@@ -35,7 +39,11 @@
     }
 
     .add-to-cart {
-      background-image: linear-gradient(to bottom right, #8f36dc, #e09e3af2);
+      background-image: linear-gradient(
+        to bottom right,
+        #e67f93 0%,
+        #f3714e 100%
+      );
       color: white;
       border: none;
       padding: 0.5rem 1rem;
@@ -43,11 +51,7 @@
       transition: background-image 0.3s ease, border-radius 0.3s ease;
 
       &:hover {
-        background-image: linear-gradient(
-          to bottom right,
-          #e67f93 0%,
-          #f3714e 100%
-        );
+        background-image: linear-gradient(to bottom right, #8f36dc, #e09e3af2);
       }
     }
   }
