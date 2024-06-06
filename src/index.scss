@@ -7,49 +7,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #e3f0f7, #f6e8e6, #f8f6e9);
-
+  background: linear-gradient(to right, #d6e9f3, #f3dbd8, #f6f3dd);
 }
-
 
 body {
   margin: 0;
+  padding-top: 2vh;
   box-sizing: border-box;
-  background: linear-gradient(to right, #e3f0f7, #f6e8e6, #f8f6e9);
-
+  background: linear-gradient(to right, #d6e9f3, #f3dbd8, #f6f3dd);
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-
-  .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-}
-
-
-
-

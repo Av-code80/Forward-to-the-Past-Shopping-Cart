@@ -4,6 +4,7 @@ import { IoTrashBinOutline } from "react-icons/io5";
 import "./Cart.scss";
 import Image from "../image/Image";
 import { useNavigateOnEmptyPage } from "../../common/hooks/useNavigateOnEmptyPage";
+import "../../index.scss";
 
 /**
  * Cart component to display the shopping cart

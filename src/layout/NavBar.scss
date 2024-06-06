@@ -3,6 +3,9 @@ header {
   background-image: linear-gradient(to bottom right, #e67f93 0%, #f3714e 100%);
   margin-bottom: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
@@ -16,22 +19,26 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
 
     li {
       list-style-type: none;
+
       &.li-hover:hover {
         padding-bottom: 8px;
         border-bottom: #e8de24 2px solid;
       }
+
       a {
         color: white;
         font-weight: 700;
         text-decoration: none;
+
         &:hover {
           color: #e8de24;
         }
       }
+
       span {
         display: flex;
         flex-direction: column;
