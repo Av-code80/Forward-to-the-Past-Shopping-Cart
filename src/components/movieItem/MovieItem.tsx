@@ -22,6 +22,8 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label={`Movie ${movie.title}`}
+      role="button"
+      tabIndex={0}
     >
       <Image src={movie.imageUrl} alt={movie.title} />
       <div className="movie-details">

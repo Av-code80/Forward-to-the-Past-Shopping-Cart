@@ -2,29 +2,105 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+License
+Distributed under the MIT License. See LICENSE for more information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Énoncé
+Note avant de commencer : la solution doit être faite comme si elle était réalisée pour un client et doit poser les bonnes bases de travail de votre future équipe. Elle doit être exemplaire.
 
-## Expanding the ESLint configuration
+- L'équipe de production de Back to the Future voudrait remettre au goût du jour sa saga avec une technique marketing imparable :
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Revenir dans le passé, en 2000 ! Et passer un deal super smart avec une boutique de vente de DVDs (vous vous rappelez encore ce que c'est on espère…) avec une promo qui déchire :
 
-- Configure the top-level `parserOptions` property like this:
+- Le DVD d'un volet de la saga vaut 15 €
+Pour l'achat de 2 volets DIFFÉRENTS de la saga, on applique une réduction de 10 % sur l'ensemble des DVDs "Back to the Future" achetés
+Pour l'achat de 3 volets DIFFÉRENTS de la saga, on applique une réduction de 20 % sur l'ensemble des DVDs "Back to the Future" achetés
+La boutique de DVDs vend également d'autres films qui coûtent chacun 20 €.
+
+- L'équipe de production vous charge d'écrire un programme qui aura le comportement suivant :
+
+- En entrée, un panier sous forme de texte, séparé par des retours à la ligne qui contient le nom des films achetés
+En sortie, le nombre représentant le prix
+Vous êtes libre de montrer le résultat de la manière qui vous convient et cela peut rester très minimaliste, tant qu'il est clair que le programme sait lire le format d'entrée et qu'il suit bien les règles spécifiées. Néanmoins, comme indiqué en début d’énoncé, ce code devra être traité comme si vous l’initiiez pour votre future équipe.
+
+
+- Quelques exemples d’entrées et sortie
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Exemple n°1
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+input :
+
+Back to the Future 1
+
+Back to the Future 2
+
+Back to the Future 3
+
+Output :
+
+36
+
+Exemple n°2
+
+input :
+
+Back to the Future 1
+
+Back to the Future 3
+
+Output :
+
+27
+
+Exemple n°3 :
+
+Input :
+
+Back to the Future 1
+
+Output :
+
+15
+
+Exemple n°4 :
+
+Input :
+
+Back to the Future 1
+
+Back to the Future 2
+
+Back to the Future 3
+
+Back to the Future 2
+
+Output :
+
+48
+
+Explication :
+
+((15*4)*0.8) = 48
+
+Exemple n°5
+
+Input :
+
+Back to the Future 1
+
+Back to the Future 2
+
+Back to the Future 3
+
+La chèvre
+
+Output :
+
+56
+
+Explication :
+
+((15*3)*0.8)+20 = 56
+
+```
