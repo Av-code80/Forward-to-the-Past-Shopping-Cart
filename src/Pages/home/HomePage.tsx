@@ -1,11 +1,13 @@
+import React from "react";
 import MovieList from "../../components/movieList/MovieList";
 
 const HomePage = () => {
   return (
-    <div>
+    <main id="main-heading" aria-labelledby="main-heading">
+      Home Page
       <MovieList />
-    </div>
+    </main>
   );
 };
 
-export default HomePage;
+export default React.memo(HomePage);

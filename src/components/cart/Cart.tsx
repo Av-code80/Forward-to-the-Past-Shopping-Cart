@@ -1,13 +1,21 @@
+import React, { useCallback } from "react";
 import { useCart } from "../../context/CartContext";
 import { IoTrashBinOutline } from "react-icons/io5";
 import "./Cart.scss";
 import Image from "../image/Image";
 import { useNavigateOnEmptyPage } from "../../common/hooks/useNavigateOnEmptyPage";
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const { cart, total, removeFromCart } = useCart();
   const delay: number = 1000;
   useNavigateOnEmptyPage(cart, delay);
+
+  const handleRemove = useCallback(
+    (uniqueId: number) => {
+      removeFromCart(uniqueId);
+    },
+    [removeFromCart]
+  );
 
   return (
     <div className="cart">
@@ -19,13 +27,16 @@ const Cart = () => {
           <h3>Summary:</h3>
           <ul>
             {cart.map((item) => (
-              <li key={item.uniqueId}>
+              <li key={item.uniqueId} className="cart-item">
                 <Image src={item.movie.imageUrl} alt={item.movie.title} />
-                <div>
+                <div className="cart-item-details">
                   <span>{item.movie.title}</span> - {item.movie.price}€
                 </div>
-                <button onClick={() => removeFromCart(item.uniqueId)}>
-                  <IoTrashBinOutline size={30} />
+                <button
+                  onClick={() => handleRemove(item.uniqueId)}
+                  aria-label={`Remove ${item.movie.title} from cart`}
+                >
+                  <IoTrashBinOutline size={30} aria-hidden="true" />
                 </button>
               </li>
             ))}
@@ -37,4 +48,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default React.memo(Cart);

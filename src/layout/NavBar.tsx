@@ -40,8 +40,8 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link onClick={handleCartClick} to="/cart">
-              <span>
-                {total}€ <FaShoppingCart size={30} />
+              <span aria-label={`Cart total: ${total} euros`}>
+                {total}€ <FaShoppingCart size={30} aria-hidden="true" />
               </span>
             </Link>
           </li>

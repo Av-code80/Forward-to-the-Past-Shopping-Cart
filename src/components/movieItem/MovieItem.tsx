@@ -16,6 +16,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       className="movie-item"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      aria-label={`Movie ${movie.title}`}
     >
       <Image src={movie.imageUrl} alt={movie.title} />
       <div className="movie-details">
@@ -29,7 +30,11 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
           {movie.price}€
         </p>
         {isHovered && (
-          <button onClick={() => addToCart(movie)} className="add-to-cart">
+          <button
+            onClick={() => addToCart(movie)}
+            className="add-to-cart"
+            aria-label={`Add ${movie.title} to cart`}
+          >
             Add to Cart
           </button>
         )}
