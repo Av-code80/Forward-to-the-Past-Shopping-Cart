@@ -5,6 +5,10 @@ import "./Cart.scss";
 import Image from "../image/Image";
 import { useNavigateOnEmptyPage } from "../../common/hooks/useNavigateOnEmptyPage";
 
+/**
+ * Cart component to display the shopping cart
+ */
+
 const Cart: React.FC = () => {
   const { cart, total, removeFromCart } = useCart();
   const delay: number = 1000;

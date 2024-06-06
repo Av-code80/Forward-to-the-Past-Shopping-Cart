@@ -8,6 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 const MovieList = React.lazy(() => import("../components/movieList/MovieList"));
 const Cart = React.lazy(() => import("../components/cart/Cart"));
 
+/**
+ * @description Main application component sets up router & context providers.
+ */
+
 const App: React.FC = () => {
   return (
     <CartProvider>

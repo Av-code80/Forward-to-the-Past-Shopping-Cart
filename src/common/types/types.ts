@@ -1,4 +1,12 @@
-import { MoviesType } from "../../data/movies";
+import { MovieCategory } from "./enum";
+
+export type MoviesType = {
+  id: number;
+  title: string;
+  category: MovieCategory;
+  price: number;
+  imageUrl: string;
+};
 
 export type CartItem = {
   uniqueId: number;

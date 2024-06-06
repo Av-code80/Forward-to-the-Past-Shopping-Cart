@@ -8,6 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "../components/image/Image";
 import { useNavigateOnEmptyPage } from "../common/hooks/useNavigateOnEmptyPage";
 
+/**
+ * NavBar component to navigate between different pages
+ */
+
 const NavBar: React.FC = () => {
   const { total, cart } = useCart();
 

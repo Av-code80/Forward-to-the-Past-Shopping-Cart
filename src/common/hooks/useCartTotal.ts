@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { CartItem } from "../types/types";
 
+/**
+ * Custom hook to calculate the total cost of items in the cart
+ * @param {CartItem[]} cart - The current items in the cart
+ * @returns {number} The total cost
+ */
+
 const useCartTotal = (cart: CartItem[]): number => {
   const [total, setTotal] = useState<number>(0);
 

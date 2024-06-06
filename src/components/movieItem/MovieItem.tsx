@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { MoviesType } from "../../data/movies";
 import { useCart } from "../../context/CartContext";
 import Image from "../image/Image";
 import "./MovieItem.scss";
+import { MoviesType } from "../../common/types/types";
+
+/**
+ * MovieItem component display movie's details and add-to-cart button
+ * @param {MovieItemProps} props
+ */
 
 type MovieItemProps = {
   movie: MoviesType;
@@ -22,7 +27,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       <div className="movie-details">
         <h3>{movie.title}</h3>
         <p>
-          <span>Genre: </span>
+          <span>Category: </span>
           {movie.category}
         </p>
         <p>

@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Image component to display an image with a fallback
+ * @param {ImageProps} props 
+ */
+
 interface ImageProps {
   src: string;
   alt: string;

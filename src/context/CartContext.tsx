@@ -1,9 +1,13 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
-import { MoviesType } from "../data/movies";
+import React, { createContext, useContext, ReactNode } from "react";
 import { toast } from "react-toastify";
-import { CartContextType, CartItem } from "../common/types/types";
+import { CartContextType, CartItem, MoviesType } from "../common/types/types";
 import useCartTotal from "../common/hooks/useCartTotal";
 import { useLocalStorage } from "../common/hooks/useLocalStorage";
+
+/**
+ * Provide cart context to its children
+ * @param {ReactNode} children - The children components.
+ */
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
