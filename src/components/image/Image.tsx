@@ -18,7 +18,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, className}) => {
     <img
       src={src || defaultImageUrl}
       alt={alt}
-      className={className || "custom-image"}
+      className={className ?? "custom-image"}
     />
   );
 };

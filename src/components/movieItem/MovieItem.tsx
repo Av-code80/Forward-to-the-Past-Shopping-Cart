@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import Image from "../image/Image";
-import "./MovieItem.scss";
 import { MoviesType } from "../../common/types/types";
+import "./MovieItem.scss";
 
 /**
  * MovieItem component display movie's details and add-to-cart button

@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "../layout/NavBar";
 import { CartProvider } from "../context/CartContext";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-const MovieList = React.lazy(() => import("../components/movieList/MovieList"));
+const HomePage = React.lazy(() => import("../Pages/home/HomePage"));
 const Cart = React.lazy(() => import("../components/cart/Cart"));
+import "react-toastify/dist/ReactToastify.css";
 
 /**
  * @description Main application component sets up router & context providers.
@@ -21,7 +20,7 @@ const App: React.FC = () => {
           <NavBar />
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<MovieList />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
           </Suspense>

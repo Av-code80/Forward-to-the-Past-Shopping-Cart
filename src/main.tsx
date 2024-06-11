@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HomePage from "./app/App";
+import App from "./app/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HomePage />
+    <App />
   </React.StrictMode>
 );

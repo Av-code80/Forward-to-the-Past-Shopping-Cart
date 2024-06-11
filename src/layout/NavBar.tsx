@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import "./NavBar.scss";
 import { useCart } from "../context/CartContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "../components/image/Image";
 import { useNavigateOnEmptyPage } from "../common/hooks/useNavigateOnEmptyPage";
+import { PiFilmSlate } from "react-icons/pi";
+import "./NavBar.scss";
 
 /**
  * NavBar component to navigate between different pages
@@ -40,7 +41,9 @@ const NavBar: React.FC = () => {
             </Link>
           </li>
           <li className="li-hover">
-            <Link to="/">MOVIES</Link>
+            <Link to="/">
+              <PiFilmSlate size={40} />
+            </Link>
           </li>
           <li>
             <Link onClick={handleCartClick} to="/cart">

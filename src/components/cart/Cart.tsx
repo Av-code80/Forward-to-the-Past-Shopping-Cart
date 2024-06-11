@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { useCart } from "../../context/CartContext";
 import { IoTrashBinOutline } from "react-icons/io5";
-import "./Cart.scss";
 import Image from "../image/Image";
 import { useNavigateOnEmptyPage } from "../../common/hooks/useNavigateOnEmptyPage";
+import "./Cart.scss";
 import "../../index.scss";
 
 /**
