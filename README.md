@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Back to the Future
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## States
 
-License
-Distributed under the MIT License. See LICENSE for more information.
+- Note before starting: the solution must be done as if it were created for a client and must lay the right working foundations for your future team. It must be exemplary.
 
-## Énoncé
-Note avant de commencer : la solution doit être faite comme si elle était réalisée pour un client et doit poser les bonnes bases de travail de votre future équipe. Elle doit être exemplaire.
+- The Back to the Future production team would like to bring its saga up to date with an unstoppable marketing technique:
 
-- L'équipe de production de Back to the Future voudrait remettre au goût du jour sa saga avec une technique marketing imparable :
+- Go back to the past, to 2000! And make a super smart deal with a DVD sales store (you still remember what it is, we hope…) with a killer promo:
 
-- Revenir dans le passé, en 2000 ! Et passer un deal super smart avec une boutique de vente de DVDs (vous vous rappelez encore ce que c'est on espère…) avec une promo qui déchire :
+- The DVD of one part of the saga is worth €15
+For the purchase of 2 DIFFERENT parts of the saga, we apply a 10% reduction on all “Back to the Future” DVDs purchased
+For the purchase of 3 DIFFERENT parts of the saga, we apply a 20% reduction on all “Back to the Future” DVDs purchased
+The DVD store also sells other films which cost €20 each.
 
-- Le DVD d'un volet de la saga vaut 15 €
-Pour l'achat de 2 volets DIFFÉRENTS de la saga, on applique une réduction de 10 % sur l'ensemble des DVDs "Back to the Future" achetés
-Pour l'achat de 3 volets DIFFÉRENTS de la saga, on applique une réduction de 20 % sur l'ensemble des DVDs "Back to the Future" achetés
-La boutique de DVDs vend également d'autres films qui coûtent chacun 20 €.
+- The production team tasks you with writing a program that will have the following behavior:
 
-- L'équipe de production vous charge d'écrire un programme qui aura le comportement suivant :
+- As input, a basket in text form, separated by newlines which contains the name of the films purchased
+At the output, the number representing the price
+You are free to show the result in any way you like and it can be very minimalist, as long as it is clear that the program knows how to read the input format and follows the specified rules. However, as indicated at the beginning of this statement, this code should be treated as if you were initiating it for your future team.
 
-- En entrée, un panier sous forme de texte, séparé par des retours à la ligne qui contient le nom des films achetés
-En sortie, le nombre représentant le prix
-Vous êtes libre de montrer le résultat de la manière qui vous convient et cela peut rester très minimaliste, tant qu'il est clair que le programme sait lire le format d'entrée et qu'il suit bien les règles spécifiées. Néanmoins, comme indiqué en début d’énoncé, ce code devra être traité comme si vous l’initiiez pour votre future équipe.
+- You can choose the language that seems most relevant to you (in which you are comfortable, the better), and which must be able to run on a JVM or Python (in the general case) or JS/TS ( if you are a front end or full stack front specialist candidate). You will ensure that the delivered project allows someone with the appropriate SDK to launch, use and maintain your program easily. In summary, the code must be of very good quality.
 
+- During the possible interview, come with your code on your PC (to allow you to have support on which you have control).
 
-- Quelques exemples d’entrées et sortie
+Some examples of inputs and outputs
 
 ```js
 Exemple n°1
@@ -104,3 +103,48 @@ Explication :
 ((15*3)*0.8)+20 = 56
 
 ```
+
+## Requirements
+
+- Node.js (version 14 or later)
+- npm (version 6 or later)
+
+- ## Installation
+  
+ ```sh
+1. Clone the repository:
+
+git clone https://github.com/Av-code80/Forward-to-the-Past
+
+2. Navigate to the project directory:
+   cd forward-to-the-past
+3. npm install
+
+4. npm run dev
+
+- To build the application for production:
+
+1. npm run build
+
+- To preview the production build:
+
+1. npm run preview
+
+- To lint the code
+
+1. npm run lint
+
+- To format the code with prettier
+
+1. npm run format
+``
+
+## License
+
+- Distributed under the MIT License. See LICENSE for more information.
+
+## Acknowledgements
+
+- React
+- TypeScript
+- Vite

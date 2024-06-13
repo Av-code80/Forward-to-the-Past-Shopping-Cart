@@ -18,5 +18,5 @@ export const useNavigateOnEmptyPage = (cart: CartItem[], delay: number) => {
       }, delay);
       return () => clearTimeout(timer);
     }
-  }, [cart, navigate, delay]);
+  }, [cart, delay]);
 };
