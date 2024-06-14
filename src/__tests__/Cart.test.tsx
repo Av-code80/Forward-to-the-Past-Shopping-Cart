@@ -45,24 +45,31 @@ describe("Cart Component", () => {
       </CartProvider>
     );
 
-    const selectedMovie = screen.getByTestId("cartId-items");
+    const selectedMovie = screen.getByTestId("cart-it");
     expect(selectedMovie).toBeInTheDocument();
     expect(selectedMovie).toHaveTextContent("Movie");
     expect(selectedMovie).toHaveTextContent("10€");
   });
-});
 
-describe("Cart Component", () => {
   test("renders the Shopping Cart header", () => {
+    (useCart as jest.Mock).mockReturnValue({
+      cart: [],
+      total: 0,
+      addToCart: jest.fn(),
+      removeFromCart: jest.fn(),
+      clearCart: jest.fn(),
+    });
+
     render(
       <CartProvider>
         <Cart />
       </CartProvider>
     );
+
     expect(screen.getByText(/shopping cart/i)).toBeInTheDocument();
   });
 
- test("displays empty cart message when there are no items", () => {
+  test("displays empty cart message when there are no items", () => {
     (useCart as jest.Mock).mockReturnValue({
       cart: [],
       total: 0,

@@ -53,7 +53,6 @@ const Cart: React.FC = () => {
                   </div>
                   <span className="span-value">x {quantity}</span>
                 </div>
-
                 <button
                   onClick={() => handleRemove(item.uniqueId)}
                   aria-label={`Remove ${item.movie.title} from cart`}
