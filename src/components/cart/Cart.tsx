@@ -44,7 +44,7 @@ const Cart: React.FC = () => {
           <h3>Summary:</h3>
           <ul>
             {groupedCartItems.map(({ item, quantity }) => (
-              <li key={item.uniqueId} className="cart-item">
+              <li data-testid="cart-it" key={item.uniqueId} className="cart-item">
                 <Image src={item.movie.imageUrl} alt={item.movie.title} />
                 <div className="cart-item-details">
                   <div>
