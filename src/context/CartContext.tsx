@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode } from "react";
+import React, { createContext, useContext, ReactNode } from "react";
 import { toast } from "react-toastify";
 import { CartContextType, CartItem, MoviesType } from "../common/types/types";
 import useCartTotal from "../common/hooks/useCartTotal";

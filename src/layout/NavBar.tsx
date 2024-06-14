@@ -13,7 +13,7 @@ import "./NavBar.scss";
  * NavBar component to navigate between different pages
  */
 
-const NavBar: React.FC = () => {
+export const NavBar = () => {
   const { total, cart } = useCart();
 
   const delay: number = 1000;
@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
   };
   return (
     <header>
-      <nav className="navbar">
+      <nav className="navbar" role="navigation">
         <ul>
           <li>
             <Link to="/">
@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
           </li>
           <li>
             <Link onClick={handleCartClick} to="/cart">
-              <span aria-label={`Cart total: ${total} euros`}>
+              <span data-testid="navId" aria-label={`Cart total: ${total} euros`}>
                 {total}€ <FaShoppingCart size={30} aria-hidden="true" />
               </span>
             </Link>
@@ -56,6 +56,4 @@ const NavBar: React.FC = () => {
       </nav>
     </header>
   );
-};
-
-export default NavBar;
+}

@@ -1,7 +1,6 @@
-import React from "react";
 import MovieList from "../../components/movieList/MovieList";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <main id="main-heading" aria-labelledby="main-heading">
       <MovieList />
@@ -9,4 +8,4 @@ const HomePage = () => {
   );
 };
 
-export default React.memo(HomePage);
+

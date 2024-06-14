@@ -1,17 +1,14 @@
-import React, { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "../layout/NavBar";
+import { NavBar } from "../layout/NavBar";
 import { CartProvider } from "../context/CartContext";
 import { ToastContainer } from "react-toastify";
-const HomePage = React.lazy(() => import("../Pages/home/HomePage"));
-const Cart = React.lazy(() => import("../components/cart/Cart"));
 import "react-toastify/dist/ReactToastify.css";
 
-/**
- * @description Main application component sets up router & context providers.
- */
+const HomePage = lazy(() => import("../Pages/home/HomePage"));
+const Cart = lazy(() => import("../components/cart/Cart"));
 
-const App: React.FC = () => {
+export default function App() {
   return (
     <CartProvider>
       <ToastContainer position="top-left" autoClose={2000} />
@@ -28,6 +25,4 @@ const App: React.FC = () => {
       </Router>
     </CartProvider>
   );
-};
-
-export default App;
+}

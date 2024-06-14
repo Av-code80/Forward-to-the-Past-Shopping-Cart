@@ -47,11 +47,11 @@ const Cart: React.FC = () => {
               <li key={item.uniqueId} className="cart-item">
                 <Image src={item.movie.imageUrl} alt={item.movie.title} />
                 <div className="cart-item-details">
-                    <div>
-                      <span>{item.movie.title} - </span>
-                      <span className="span-value">{item.movie.price}€</span>
-                    </div>
-                    <span className="span-value">x {quantity}</span>
+                  <div>
+                    <span>{item.movie.title} - </span>
+                    <span className="span-value">{item.movie.price}€</span>
+                  </div>
+                  <span className="span-value">x {quantity}</span>
                 </div>
 
                 <button
@@ -70,4 +70,4 @@ const Cart: React.FC = () => {
   );
 };
 
-export default React.memo(Cart);
+export default Cart;

@@ -24,6 +24,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       aria-label={`Movie ${movie.title}`}
       role="button"
       tabIndex={0}
+      data-testid="movie-item"
     >
       <Image src={movie.imageUrl} alt={movie.title} />
       <div className="movie-details">

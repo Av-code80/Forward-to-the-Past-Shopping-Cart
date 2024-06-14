@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * Image component to display an image with a fallback
- * @param {ImageProps} props 
+ * @param {ImageProps} props
  */
 
 interface ImageProps {
@@ -11,7 +11,7 @@ interface ImageProps {
   className?: string;
 }
 
-const Image: React.FC<ImageProps> = ({ src, alt, className}) => {
+const Image: React.FC<ImageProps> = ({ src, alt, className }) => {
   const defaultImageUrl = "/images/default.jpg";
 
   return (
