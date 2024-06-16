@@ -12,7 +12,7 @@ import "./MovieItem.scss";
 type MovieItemProps = {
   movie: MoviesType;
 };
-const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
+export default function MovieItem({ movie }: MovieItemProps) {
   const { addToCart } = useCart();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -20,7 +20,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
     <div
       className="movie-item"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       aria-label={`Movie ${movie.title}`}
       role="button"
       tabIndex={0}
@@ -42,6 +42,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
             onClick={() => addToCart(movie)}
             className="add-to-cart"
             aria-label={`Add ${movie.title} to cart`}
+            data-testid="test-btn"
           >
             Add to Cart
           </button>
@@ -49,6 +50,4 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie }) => {
       </div>
     </div>
   );
-};
-
-export default MovieItem;
+}
