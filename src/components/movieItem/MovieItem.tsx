@@ -20,7 +20,7 @@ export default function MovieItem({ movie }: MovieItemProps) {
     <div
       className="movie-item"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => setIsHovered(true)}
       aria-label={`Movie ${movie.title}`}
       role="button"
       tabIndex={0}

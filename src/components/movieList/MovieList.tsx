@@ -1,4 +1,3 @@
-import React from "react";
 import { movies } from "../../data/movies";
 import "./MovieList.scss";
 import MovieItem from "../movieItem/MovieItem";
@@ -7,7 +6,7 @@ import MovieItem from "../movieItem/MovieItem";
  * MovieList component to display a list of movies
  */
 
-const MovieList: React.FC = () => {
+export default function MovieList() {
   return (
     <div
       className="movie-list"
@@ -20,6 +19,10 @@ const MovieList: React.FC = () => {
       ))}
     </div>
   );
-};
+}
 
-export default MovieList;
+
+
+
+
+
