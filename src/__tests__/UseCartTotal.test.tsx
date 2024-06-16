@@ -3,7 +3,7 @@ import { CartItem, MoviesType } from "../common/types/types";
 import { MovieCategory } from "../common/types/enum";
 import { renderHook } from "@testing-library/react";
 
-   describe("useCartTotal", () => {
+describe("useCartTotal", () => {
   test("should return 0 for an empty cart", () => {
     const { result } = renderHook(() => useCartTotal([]));
     expect(result.current).toBe(0);
@@ -12,17 +12,17 @@ import { renderHook } from "@testing-library/react";
   test("should calculate total for a cart with regular movies", () => {
     const movie1: MoviesType = {
       id: 1,
-      title: 'Movie 1',
+      title: "Movie 1",
       category: MovieCategory.Drama,
       price: 10,
-      imageUrl: '',
+      imageUrl: "",
     };
     const movie2: MoviesType = {
       id: 2,
-      title: 'Movie 2',
+      title: "Movie 2",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
 
     const cart: CartItem[] = [
@@ -37,15 +37,13 @@ import { renderHook } from "@testing-library/react";
   test('should calculate total for a cart with "Back to the Future" movies with no discount', () => {
     const bttf1: MoviesType = {
       id: 1,
-      title: 'Back to the Future 1',
+      title: "Back to the Future 1",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
 
-    const cart: CartItem[] = [
-      { uniqueId: 1, movie: bttf1 },
-    ];
+    const cart: CartItem[] = [{ uniqueId: 1, movie: bttf1 }];
 
     const { result } = renderHook(() => useCartTotal(cart));
     expect(result.current).toBe(15);
@@ -54,17 +52,17 @@ import { renderHook } from "@testing-library/react";
   test('should apply 10% discount for 2 unique "Back to the Future" movies', () => {
     const bttf1: MoviesType = {
       id: 1,
-      title: 'Back to the Future 1',
+      title: "Back to the Future 1",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
     const bttf2: MoviesType = {
       id: 2,
-      title: 'Back to the Future 2',
+      title: "Back to the Future 2",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
 
     const cart: CartItem[] = [
@@ -73,30 +71,30 @@ import { renderHook } from "@testing-library/react";
     ];
 
     const { result } = renderHook(() => useCartTotal(cart));
-    expect(result.current).toBe(27); 
+    expect(result.current).toBe(27);
   });
 
   test('should apply 20% discount for 3 unique "Back to the Future" movies', () => {
     const bttf1: MoviesType = {
       id: 1,
-      title: 'Back to the Future 1',
+      title: "Back to the Future 1",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
     const bttf2: MoviesType = {
       id: 2,
-      title: 'Back to the Future 2',
+      title: "Back to the Future 2",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
     const bttf3: MoviesType = {
       id: 3,
-      title: 'Back to the Future 3',
+      title: "Back to the Future 3",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
 
     const cart: CartItem[] = [
@@ -106,30 +104,30 @@ import { renderHook } from "@testing-library/react";
     ];
 
     const { result } = renderHook(() => useCartTotal(cart));
-    expect(result.current).toBe(36); 
+    expect(result.current).toBe(36);
   });
 
-  test('should calculate total for a mixed cart with discounts applied correctly', () => {
+  test("should calculate total for a mixed cart with discounts applied correctly", () => {
     const bttf1: MoviesType = {
       id: 1,
-      title: 'Back to the Future 1',
+      title: "Back to the Future 1",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
     const bttf2: MoviesType = {
       id: 2,
-      title: 'Back to the Future 2',
+      title: "Back to the Future 2",
       category: MovieCategory.SciFi,
       price: 15,
-      imageUrl: '',
+      imageUrl: "",
     };
     const otherMovie: MoviesType = {
       id: 3,
-      title: 'Movie 3',
+      title: "Movie 3",
       category: MovieCategory.Drama,
       price: 20,
-      imageUrl: '',
+      imageUrl: "",
     };
 
     const cart: CartItem[] = [
@@ -139,7 +137,23 @@ import { renderHook } from "@testing-library/react";
     ];
 
     const { result } = renderHook(() => useCartTotal(cart));
-    expect(result.current).toBe(47); 
+    expect(result.current).toBe(47);
+  });
+
+  test("should calculate total for a cart with 2 movies of the same id but different uniqueId", () => {
+    const bttf1: MoviesType = {
+      id: 1,
+      title: "Back to the Future 1",
+      category: MovieCategory.SciFi,
+      price: 15,
+      imageUrl: "",
+    };
+    const cart: CartItem[] = [
+      { uniqueId: 1, movie: bttf1 },
+      { uniqueId: 2, movie: bttf1 },
+    ];
+
+    const { result } = renderHook(() => useCartTotal(cart));
+    expect(result.current).toBe(30);
   });
 });
-  
