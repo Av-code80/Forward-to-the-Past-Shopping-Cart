@@ -42,7 +42,6 @@ export default function MovieItem({ movie }: MovieItemProps) {
             onClick={() => addToCart(movie)}
             className="add-to-cart"
             aria-label={`Add ${movie.title} to cart`}
-            data-testid="test-btn"
           >
             Add to Cart
           </button>
