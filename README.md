@@ -1,8 +1,6 @@
-# Back to the Future
+# Back to the Future – An exercise project
 
 ## States
-
-- Note before starting: the solution must be done as if it were created for a client and must lay the right working foundations for your future team. It must be exemplary.
 
 - The Back to the Future production team would like to bring its saga up to date with an unstoppable marketing technique:
 
@@ -13,17 +11,12 @@ For the purchase of 2 DIFFERENT parts of the saga, we apply a 10% reduction on a
 For the purchase of 3 DIFFERENT parts of the saga, we apply a 20% reduction on all “Back to the Future” DVDs purchased
 The DVD store also sells other films which cost €20 each.
 
-- The production team tasks you with writing a program that will have the following behavior:
-
 - As input, a basket in text form, separated by newlines which contains the name of the films purchased
 At the output, the number representing the price
 You are free to show the result in any way you like and it can be very minimalist, as long as it is clear that the program knows how to read the input format and follows the specified rules. However, as indicated at the beginning of this statement, this code should be treated as if you were initiating it for your future team.
 
-- You can choose the language that seems most relevant to you (in which you are comfortable, the better), and which must be able to run on a JVM or Python (in the general case) or JS/TS ( if you are a front end or full stack front specialist candidate). You will ensure that the delivered project allows someone with the appropriate SDK to launch, use and maintain your program easily. In summary, the code must be of very good quality.
 
-- During the possible interview, come with your code on your PC (to allow you to have support on which you have control).
-
-Some examples of inputs and outputs
+Examples of inputs and outputs
 
 ```js
 Exemple n°1
